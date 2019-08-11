@@ -1,0 +1,8 @@
+Problemas com o banco?
+instale primeiro isso:
+
+sudo apt install postgresql-10-postgis-scripts
+
+dentro do banco digite:
+
+CREATE EXTENSION postgis;
