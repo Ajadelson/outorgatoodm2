@@ -54,7 +54,7 @@ class Run():
                 self.odm.annotation_insert("ResultValues", "observacoes_importantes", aux)
                 self.odm.cur.execute("SELECT * FROM ODM2.Annotations")
                 reanoid = self.odm.cur.fetchall()
-                self.odm.resultvalues_anotacao(resuid[-1][0], reanoid[-1][0],item[1][5], item[1][7])
+                self.odm.measuresul_anotacao(resuid[-1][0], reanoid[-1][0])
                 #print("Nota Criada!")
             #except:
                 #flagbesta+=1
@@ -63,7 +63,7 @@ class Run():
             #Inserindo Anotações para MeasurementResult
             #Processo, Portaria e ano da portaria
             ppstring = "PROCESSO " + str(item[1][2]) + " E PORTARIA " + str(item[1][3])
-            self.odm.annotation_insert("MeasurementResults", "Processo_Portaria", ppstring)
+            self.odm.annotation_insert("ResultValues", "Processo_Portaria", ppstring)
             self.odm.cur.execute("SELECT * FROM ODM2.Annotations")
             anotid = self.odm.cur.fetchall()
             self.odm.measuresul_anotacao(resuid[-1][0], anotid[-1][0])
